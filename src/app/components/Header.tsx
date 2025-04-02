@@ -5,23 +5,27 @@ import { Search } from "@geist-ui/icons";
 const Header = () => {
 
     return(
-        <header className="sticky top-0 z-50 text-white py-2 px-4 flex justify-between items-center">
-            <h1 className="text-xl font-bold ">
-                <Link href="/" className="hover:text-blue-400">Siddhant Antil</Link>
-            </h1>
+        <header className="sticky top-0 text-white py-2 px-4">
+            <div className="grid grid-cols-14 items-center">
+                <h1 className="text-xl font-bold col-span-2">
+                    <Link href="/" className="hover:text-blue-400">Siddhant Antil</Link>
+                </h1>
 
-            {/* Center: Search Bar Placeholder */}
-            <div className="relative w-1/3 flex items-center w-80 border border-gray-600 rounded-lg px-3 py-2 text-gray-400 hover:border-1 hover:border-white">
-                <SearchComponent className="w-5 h-5" />
-                <Search className=""/>
-                <span className="ml-2 text-sm">Search</span>
-                <span className="ml-auto text-sm">Ctrl + K</span>
+                <div className="col-span-3 col-start-5">
+                    <div className="flex items-center border border-gray-600 rounded-lg px-3 py-2 text-gray-400 hover:border-white transition-colors">
+                        <SearchComponent className="w-5 h-5" />
+                        <Search />
+                        <span className="ml-2 text-sm">Search</span>
+                        <span className="ml-auto text-sm hidden sm:block">Ctrl + K</span>
+                    </div>
+                </div>
+
+                <div className="col-span-2 col-start-14 flex justify-end">
+                    <button className="flex items-center">
+                        <span className="text-sm text-blue-400">Dark</span>
+                    </button>
+                </div>
             </div>
-
-            {/* Right: Theme Toggle (Placeholder) */}
-            <button className="flex items-center space-x-2">
-                <span className="text-sm text-blue-400">Dark</span>
-            </button>
         </header>
     )
 }
