@@ -5,7 +5,7 @@ import { Search } from "@geist-ui/icons";
 const Header = () => {
 
     return(
-        <header className="w-full text-white py-4 px-6 flex justify-between items-center">
+        <header className="sticky top-0 z-50 text-white py-2 px-4 flex justify-between items-center">
             <h1 className="text-xl font-bold ">
                 <Link href="/" className="hover:text-blue-400">Siddhant Antil</Link>
             </h1>
@@ -20,7 +20,6 @@ const Header = () => {
 
             {/* Right: Theme Toggle (Placeholder) */}
             <button className="flex items-center space-x-2">
-                {/* <Moon className="w-5 h-5" /> */}
                 <span className="text-sm text-blue-400">Dark</span>
             </button>
         </header>
