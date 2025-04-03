@@ -21,7 +21,7 @@ const Sidenavbar = () => {
     };
 
     return(
-        <nav className=" text-white p-6 w-64 min-h-screen">
+        <nav className=" text-white py-6 w-64 border border-red-500">
             <div className="flex flex-col space-y-4">
                 <div className="relative">
                     <button onClick={() => toggleDropdown("gettingStarted")} className="flex items-center">

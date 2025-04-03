@@ -26,20 +26,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="flex flex-col min-h-screen bg-gray-900">
-        <Header />
-        
-        <div className="grid grid-cols-1 md:grid-cols-12 max-w-screen-2xl mx-auto w-full">
-          <div className="hidden md:block md:col-span-3">
-            <Sidenavbar />
+      <html lang="en">
+        <body className={`bg-gray-900 ${geistSans.variable} ${geistMono.variable}`}>
+          <Header />
+          <div className="max-w-screen-2xl mx-auto w-full">
+            <div className="flex flex-col md:flex-row">
+              <aside className="hidden md:block md:w-1/4">
+                <Sidenavbar />
+              </aside>
+            <main className="md:w-3/4 border border-red-500">
+              {children}              
+              <Footer />
+            </main>
           </div>
-          <main className="col-span-1 md:col-span-9 px-4 md:px-8">
-            {children}
-          </main>
         </div>
-
-        <Footer />
       </body>
     </html>
   );

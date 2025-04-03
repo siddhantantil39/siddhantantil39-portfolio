@@ -3,11 +3,11 @@ import EducationData from "@/app/data/EducationData";
 
 export default function Education() {
     return (
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-white mb-8">Education</h1>
-          <div className="space-y-8">
-            <div className="rounded-lg p-6 transition-colors">
+      <div className="mx-auto py-8 items-left border border-red-500">
+        <div className="mx-auto  border border-red-500">
+        <h1 className="text-4xl font-bold text-white mb-8">Education</h1>
+          <div className="">
+            <div className="rounded-lg  transition-colors">
               <p className="text-gray-300 leading-relaxed">
                 {EducationData.description}
                 <Link 
