@@ -30,9 +30,11 @@ export default function RootLayout({
       <body className="flex flex-col min-h-screen bg-gray-900">
         <Header />
         
-        <div className="flex flex-1">
-          <Sidenavbar />
-          <main className="flex-1 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 max-w-screen-2xl mx-auto w-full">
+          <div className="hidden md:block md:col-span-3">
+            <Sidenavbar />
+          </div>
+          <main className="col-span-1 md:col-span-9 px-4 md:px-8">
             {children}
           </main>
         </div>

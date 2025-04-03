@@ -30,12 +30,12 @@ const Sidenavbar = () => {
                     {dropdowns.gettingStarted && (
                         <ul className="relative left-0 mt-2 w-40 text-gray-300 ">
                             <li>
-                                <Link href="/overview" className="block px-4 py-2 hover:text-blue-500">
+                                <Link href="/home" className="block px-4 py-2 hover:text-blue-500">
                                 Overview
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/work-history" className="block px-4 py-2 hover:text-blue-500">
+                                <Link href="/work" className="block px-4 py-2 hover:text-blue-500">
                                 Work history
                                 </Link>
                             </li>
