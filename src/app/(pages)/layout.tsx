@@ -34,7 +34,7 @@ export default function RootLayout({
               <aside className="hidden md:block md:w-1/4">
                 <Sidenavbar />
               </aside>
-            <main className="md:w-2/4 border border-red-500">
+            <main className="lg:w-2/4 w-3/4 border border-red-500">
               {children}              
               <Footer />
             </main>
