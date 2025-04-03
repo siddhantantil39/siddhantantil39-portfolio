@@ -27,14 +27,14 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="en">
-        <body className={`bg-gray-900 ${geistSans.variable} ${geistMono.variable}`}>
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
           <Header />
-          <div className="max-w-screen-2xl mx-auto w-full">
+          <div className="md:mx-auto w-full ">
             <div className="flex flex-col md:flex-row">
               <aside className="hidden md:block md:w-1/4">
                 <Sidenavbar />
               </aside>
-            <main className="md:w-3/4 border border-red-500">
+            <main className="md:w-2/4 border border-red-500">
               {children}              
               <Footer />
             </main>

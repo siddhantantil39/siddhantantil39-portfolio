@@ -26,9 +26,13 @@ const Footer = () => {
 
     if (!currentRoute) return null;
 
+    const hasNextRoute = Boolean(currentRoute.next);
+    const hasPrevRoute = Boolean(currentRoute.prev);
+    const singleButton = Number(hasNextRoute) + Number(hasPrevRoute) === 1;
+
     return(
-        <footer className="w-full text-white">
-            <div className="flex justify-between items-center max-w-4xl mx-auto border border-red-500">
+        <footer className="w-full text-white py-4">
+            <div className={`grid ${singleButton ? 'grid-cols-1' : 'grid-cols-2'} gap-4 max-w-full mx-auto`}>
                 {navigationButtons.map(({ type, icon: Icon, label, className }) => {
                     const route = currentRoute[type];
                     if (!route) return null;
@@ -37,14 +41,16 @@ const Footer = () => {
                         <Link 
                             key={type}
                             href={route.path} 
-                            className={`flex items-center gap-2 border border-gray-600 rounded-lg p-4 transition ${className}`}
+                            className={`flex items-center gap-2 border border-gray-600 rounded-lg p-4 transition hover:bg-gray-800 w-full ${type === 'next' ? 'justify-end' : 'justify-start'}`}
                         >
                             {type === 'prev' && <Icon />}
                             <div className="flex flex-col">
-                                <span className="text-sm text-gray-400">{label}</span>
-                                <span className="text-base">{route.label}</span>
+                                <span className={`text-sm text-gray-400 ${className}`}>{label}</span>
+                                <span className={`text-base text-white `}>{route.label}</span>
                             </div>
-                            {type === 'next' && <Icon />}
+                            <div className="">
+                                {type === 'next' && <Icon />}
+                            </div>
                         </Link> 
                     );
                 })}

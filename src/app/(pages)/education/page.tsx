@@ -8,11 +8,11 @@ export default function Education() {
         <h1 className="text-4xl font-bold text-white mb-8">Education</h1>
           <div className="">
             <div className="rounded-lg  transition-colors">
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed font-montserrat">
                 {EducationData.description}
                 <Link 
                   href={EducationData.leetcodeLink.href}
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-400 hover:text-blue-300 transition-colors font-montserrat"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
