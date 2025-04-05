@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "generate-search-index": "node scripts/generate-search-index.js",
-    "build:with-search": "npm run generate-search-index && npm run dev"
+    "build:with-search": "npm run generate-search-index && npm run build"
   },
   "dependencies": {
     "@geist-ui/icons": "^1.0.2",
