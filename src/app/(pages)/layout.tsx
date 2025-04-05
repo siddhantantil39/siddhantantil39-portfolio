@@ -28,14 +28,14 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <body className={`${geistSans.variable} ${geistMono.variable} px-4`}>
           <Header />
           <div className="md:mx-auto w-full ">
             <div className="flex flex-col md:flex-row">
               <aside className="hidden md:block md:w-1/4">
                 <Sidenavbar />
               </aside>
-            <main className="lg:w-2/5 w-3/4 ">
+              <main className="flex-1 w-full md:w-3/4">
               {children}              
               <Footer />
             </main>
