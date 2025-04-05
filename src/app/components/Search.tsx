@@ -106,7 +106,7 @@ export default function Search({ className }: SearchProps) {
             ref={searchRef}
             onClick={e => e.stopPropagation()}
           >
-            <div className="bg-gray-900 rounded-lg border border-gray-700 shadow-2xl">
+            <div className="bg-gray-600 rounded-lg border border-gray-300 text-white">
               <div className="p-4">
                 <div className="relative">
                   <input
@@ -115,7 +115,7 @@ export default function Search({ className }: SearchProps) {
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search"
-                    className="w-full bg-transparent text-white border-b border-gray-700 p-2 outline-none focus:border-gray-500"
+                    className="w-full bg-transparent text-white border-b border-gray-900 p-2 "
                   />
                   {isSearching && (
                     <span className="absolute right-2 top-1/2 -translate-y-1/2 text-sm text-gray-500">
@@ -131,7 +131,7 @@ export default function Search({ className }: SearchProps) {
                         <li 
                           key={index}
                           onClick={() => handleResultClick(route)}
-                          className="p-2 hover:bg-gray-800 rounded cursor-pointer text-gray-300 hover:text-white"
+                          className="p-2 hover:bg-gray-800 rounded cursor-pointer text-white-300 hover:text-white"
                         >
                           {`${query} results: ${route}`}
                         </li>
