@@ -1,10 +1,9 @@
-import WorkData from "@/app/data/WorkData";
-import HomeData from "@/app/data/WorkData";
+import WorkData from "@/app/data/work/WorkData";
 
 export default function Work() {
     return (
-        <div className="mx-auto py-8 items-left border border-red-500">
-        <div className="mx-auto  border border-red-500">
+        <div className="mx-auto py-8 items-left ">
+        <div className="mx-auto  ">
         <h1 className="text-4xl font-bold text-white mb-8">Work History</h1>
           <div className="">
             {Object.entries(WorkData).map((section, index) => (

@@ -6,10 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-search-index": "node scripts/generate-search-index.js",
+    "build:with-search": "npm run generate-search-index && npm run dev"
   },
   "dependencies": {
     "@geist-ui/icons": "^1.0.2",
+    "gray-matter": "^4.0.3",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

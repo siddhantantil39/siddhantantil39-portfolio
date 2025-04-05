@@ -1,9 +1,9 @@
-import HomeData from "@/app/data/HomeData";
+import HomeData from "@/app/data/home/HomeData";
 
 export default function Home() {
     return (
-      <div className="mx-auto py-8 items-left border border-red-500">
-        <div className="mx-auto  border border-red-500">
+      <div className="mx-auto py-8 items-left ">
+        <div className="mx-auto  ">
           <h1 className="text-4xl font-bold text-white mb-8 font-montserrat">Overview</h1>
           <div className="">
             {Object.entries(HomeData).map((section, index) => (
