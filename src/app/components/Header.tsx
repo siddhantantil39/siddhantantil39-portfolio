@@ -7,7 +7,7 @@ const Header = () => {
         <header className="sticky top-0 text-white py-2 z-10 ">
             <div className="grid grid-cols-4 md:grid-cols-12 items-center s:max-w-screen-2xl mx-auto gap-4 ">
                 <h1 className="text-2xl font-bold col-span-3 md:col-span-3 ">
-                    <Link href="/" className="hover:text-blue-400 whitespace-nowrap text-left">Siddhant Antil</Link>
+                    <Link href="/" className="hover:text-blue-400 whitespace-nowrap text-left active:text-blue-400">Siddhant Antil</Link>
                 </h1>
 
                 <div className="col-span-1 col-start-4 md:col-span-6">

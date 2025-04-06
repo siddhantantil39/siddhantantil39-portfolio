@@ -4,6 +4,8 @@ import "../globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidenavbar from "../components/Sidenavbar";
+import { Suspense } from "react";
+import Loading from "../components/Loading";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +38,9 @@ export default function RootLayout({
                 <Sidenavbar />
               </aside>
               <main className="flex-1 w-full md:w-3/4">
-              {children}              
+              <Suspense fallback={<div className="w-full h-full"><Loading /></div>}>
+                  {children}
+              </Suspense>
               <Footer />
             </main>
           </div>
