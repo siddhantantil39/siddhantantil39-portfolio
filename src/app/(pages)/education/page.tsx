@@ -40,7 +40,7 @@ export default function Education() {
                 {EducationData.leetcodeLink.text}
                 {isHovering && (
                   <div
-                    className="absolute bg-gray-800 p-4 rounded-lg shadow-lg transform -translate-y-full border border-gray-700 z-50"
+                  className="absolute bg-gray-800 p-4 rounded-lg shadow-lg transform -translate-y-full border border-gray-700 z-50 hidden sm:block"
                     style={{
                       left: `${position.x}px`,
                       top: `${position.y}px`,
