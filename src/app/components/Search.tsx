@@ -133,7 +133,7 @@ export default function Search({ className }: SearchProps) {
                           onClick={() => handleResultClick(route)}
                           className="p-2 hover:bg-gray-800 rounded cursor-pointer text-white-300 hover:text-white"
                         >
-                          {`${query} results: ${route}`}
+                          {`${query} results found in: ${route}`}
                         </li>
                       ))}
                     </ul>
