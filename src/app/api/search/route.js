@@ -21,8 +21,12 @@ export async function GET(request) {
     let results = [];
 
     searchTerms.forEach(term => {
-      if (searchIndex[term]) {
-        results = [...results, ...searchIndex[term]];
+      if (term.length > 0) {
+        Object.keys(searchIndex).forEach(indexTerm => {
+          if (indexTerm.toLowerCase().includes(term)) {
+            results = [...results, ...searchIndex[indexTerm]];
+          }
+        });
       }
     });
 
