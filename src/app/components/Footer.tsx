@@ -31,7 +31,7 @@ const Footer = () => {
     const singleButton = Number(hasNextRoute) + Number(hasPrevRoute) === 1;
 
     return(
-        <footer className="w-full text-white py-4">
+        <footer className="w-full text-primary py-4">
             <div className={`grid ${singleButton ? 'grid-cols-1' : 'grid-cols-2'} gap-4 max-w-full mx-auto`}>
                 {navigationButtons.map(({ type, icon: Icon, label, className }) => {
                     const route = currentRoute[type];
@@ -41,12 +41,12 @@ const Footer = () => {
                         <Link 
                             key={type}
                             href={route.path} 
-                            className={`flex items-center gap-2 border border-gray-600 rounded-lg p-4 transition hover:border-gray-100 w-full ${type === 'next' ? 'justify-end' : 'justify-start'} hover:text-blue-500`}
+                            className={`flex items-center gap-2 border border-color rounded-lg p-4 transition hover:border-color w-full ${type === 'next' ? 'justify-end' : 'justify-start'} hover:text-blue-500`}
                         >
                             {type === 'prev' && <Icon />}
                             <div className="flex flex-col">
-                                <span className={`text-sm text-gray-400 ${className}`}>{label}</span>
-                                <span className={`text-base text-white `}>{route.label}</span>
+                                <span className={`text-sm text-secondary ${className}`}>{label}</span>
+                                <span className={`text-base text-primary `}>{route.label}</span>
                             </div>
                             <div className="">
                                 {type === 'next' && <Icon />}

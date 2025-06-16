@@ -89,10 +89,10 @@ export default function Search({ className }: SearchProps) {
   };
 
   return (
-    <div className="flex items-center justify-end md:justify-start md:border md:border-gray-600 rounded-lg px-3 py-2 text-gray-400 md:hover:border-white transition-colors md:w-100">
+    <div className="flex items-center justify-end md:justify-start md:border md:border-color-600 rounded-lg px-3 py-2 text-secondary-400 md:hover:border transition-colors md:w-100">
       <button 
         onClick={toggleSearch}
-        className="flex items-center gap-2 text-gray-400 hover:text-gray-300"
+        className="flex items-center gap-2 text-secondary-400 hover:text-secondary-300"
       >
         <SearchIcon className="w-5 h-5" />
         <span className="hidden md:inline w-70">Search</span>
@@ -106,7 +106,7 @@ export default function Search({ className }: SearchProps) {
             ref={searchRef}
             onClick={e => e.stopPropagation()}
           >
-            <div className="bg-gray-600 rounded-lg border border-gray-300 text-white">
+            <div className="bg-gray-600 rounded-lg border border-color text-primary">
               <div className="p-4">
                 <div className="relative">
                   <input
@@ -115,10 +115,10 @@ export default function Search({ className }: SearchProps) {
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search"
-                    className="w-full bg-transparent text-white border-b border-gray-900 p-2 "
+                    className="w-full bg-transparent text-primary border-b border-color p-2 "
                   />
                   {isSearching && (
-                    <span className="absolute right-2 top-1/2 -translate-y-1/2 text-sm text-gray-500">
+                    <span className="absolute right-2 top-1/2 -translate-y-1/2 text-sm text-secondary-500">
                       Searching...
                     </span>
                   )}
@@ -131,7 +131,7 @@ export default function Search({ className }: SearchProps) {
                         <li 
                           key={index}
                           onClick={() => handleResultClick(route)}
-                          className="p-2 hover:bg-gray-800 rounded cursor-pointer text-white-300 hover:text-white"
+                          className="p-2 hover:bg-color-800 rounded cursor-pointer text-primary-300 hover:text-primary"
                         >
                           {`${query} results found in: ${route}`}
                         </li>
