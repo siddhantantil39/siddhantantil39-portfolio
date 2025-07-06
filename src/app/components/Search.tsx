@@ -92,13 +92,13 @@ export default function Search({ className }: SearchProps) {
     <div className="flex items-center justify-end md:justify-start md:border md:border-color-600 rounded-lg px-3 py-2 text-secondary-400 md:hover:border transition-colors md:w-100">
         <button 
           onClick={toggleSearch}
-          className="flex items-center justify-between w-full text-secondary-400 hover:text-secondary-300">
-          <div className="flex items-center gap-2">
-            <SearchIcon className="w-5 h-5 ml-auto md:ml-0 md:mr-2 md:order-none order-2" />
-            <span className="hidden md:inline">Search</span>
+          <div class="flex items-center gap-2">
+            <SearchIcon class="w-5 h-5 hidden md:inline" />
+            <span class="hidden md:inline">Search</span>
           </div>
-
-          <span className="text-sm hidden lg:inline">Ctrl + K</span>
+        
+          <SearchIcon class="w-5 h-5 ml-auto md:hidden" />
+          <span class="text-sm hidden lg:inline">Ctrl + K</span>
         </button>
 
       {isOpen && (
