@@ -91,7 +91,8 @@ export default function Search({ className }: SearchProps) {
   return (
     <div className="flex items-center justify-end md:justify-start md:border md:border-color-600 rounded-lg px-3 py-2 text-secondary-400 md:hover:border transition-colors md:w-100">
         <button 
-          onClick={toggleSearch}
+          onClick={toggleSearch}           
+          className="flex items-center justify-between w-full text-secondary-400 hover:text-secondary-300">
           <div class="flex items-center gap-2">
             <SearchIcon class="w-5 h-5 hidden md:inline" />
             <span class="hidden md:inline">Search</span>
