@@ -73,7 +73,7 @@ const Sidenavbar = () => {
                         onClick={() => toggleDropdown("work")} 
                         className="flex items-center hover:text-blue-400 transition-colors"
                     >
-                        Work 
+                        Open-source Projects 
                         <ChevronDownCircle className={`ml-1 w-4 h-4 transition-transform ${dropdowns.work ? 'rotate-180' : ''}`}/>
                     </button>
                     {dropdowns.work && (
