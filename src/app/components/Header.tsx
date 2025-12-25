@@ -32,13 +32,13 @@ const Header = () => {
                     <select 
                         value={theme}
                         onChange={(e) => setTheme(e.target.value)}
-                        className="bg-transparent border border-secondary rounded px-2 py-1 text-sm focus:outline-none focus:border-blue-400 text-primary"
+                        className="bg-background text-primary border border-primary rounded px-2 py-1 text-sm focus:outline-none focus:border-blue-400"
                     >
-                        <option value="system" className="bg-primary text-primary">System</option>
-                        <option value="light" className="bg-primary text-primary">Light</option>
-                        <option value="dark" className="bg-primary text-primary">Dark</option>
+                        <option value="system" >System</option>
+                        <option value="light" >Light</option>
+                        <option value="dark" >Dark</option>
                     </select>
-                </div>
+                </div>  
             </div>
         </header>
         
