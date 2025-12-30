@@ -17,7 +17,7 @@ const Landing = () => {
                                         See my work
                                     </button>
                                 </Link>
-                                <Link href='/blog'>
+                                <Link href='/blogs'>
                                     <button className="border text-primary py-2 px-4 rounded-4xl hover:bg-secondary-100 transition-colors h-12 w-42 hover:text-foreground">
                                         Read my blog
                                     </button>

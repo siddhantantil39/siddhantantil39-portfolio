@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.headingMd {
+  @apply text-xl leading-tight my-4;
+}
+
+.padding1px {
+  @apply p-px;
+}
+
+.headingLg {
+  @apply text-4xl leading-tight my-4;
+}
+
+.list {
+  @apply list-none p-0 m-0;
+}
+
+.listItem {
+  @apply mb-5;
+}
