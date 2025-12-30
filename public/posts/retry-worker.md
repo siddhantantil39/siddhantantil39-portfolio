@@ -4,9 +4,6 @@ date: '2025-12-30'
 ---
  
 # MongoDB Retry Worker using BackgroundService (.NET)
-
-**Date:** 30 December 2025
-
 ---
 
 ## Purpose

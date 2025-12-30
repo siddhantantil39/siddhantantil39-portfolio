@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "highlight.js/styles/github-dark.css";
+
 
 :root {
   --background: #ffffff;
@@ -35,4 +37,33 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-family-base);
+}
+
+
+pre {
+  padding: 16px 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 24px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* highlight.js housekeeping */
+pre code.hljs {
+  padding: 0;
+  background: none;
+}
+
+/* 🌞 Site LIGHT → Code DARK */
+:root:not(.dark) pre {
+  background: #0d1117; /* GitHub dark */
+  color: #e6edf3;
+}
+
+
+/* Site light → dark inline code */
+:root:not(.dark) :not(pre) > code {
+  background: #161b22;
+  color: #e6edf3;
 }

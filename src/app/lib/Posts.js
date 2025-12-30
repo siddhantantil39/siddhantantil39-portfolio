@@ -3,6 +3,10 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeStringify from 'rehype-stringify';
+import remarkRehype from 'remark-rehype';
+
  
 const postsDirectory = path.join(process.cwd(), 'public',  'posts');
   
@@ -18,7 +22,9 @@ export  async function getSortedPostsData() {
       const matterResult = matter(fileContents);
 
       const processedContent = await remark()
-        .use(html)
+        .use(remarkRehype)     
+        .use(rehypeHighlight)
+        .use(rehypeStringify)       // HTML output
         .process(matterResult.content);
 
       return {
