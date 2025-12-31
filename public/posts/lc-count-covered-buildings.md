@@ -10,8 +10,6 @@ A building at `(x, y)` is considered covered if there exists another building on
 
 For each `x`, track the minimum and maximum `y`, and for each `y`, track the minimum and maximum `x`. A building is covered if it lies strictly within both its column and row ranges.
 
----
-
 ```js
 /**
  * @param {number} n
