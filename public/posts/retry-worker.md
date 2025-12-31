@@ -53,5 +53,26 @@ public class RetryWorker : BackgroundService
     }
 }
 ```
+And then the `RetryOnceAsync` runs something like this:
+```csharp
+private async Task RetryOnceAsync(CancellationToken token)
+{
+    // 1. Try to acquire a failed or stuck job
+    var job = await ClaimJobRecordAsync(token);
+
+    if (job == null)
+        return;
+
+    try
+    {
+        await ProcessJobAsync(job, token);
+        await MarkJobCompletedAsync(job, token);
+    }
+    catch (Exception)
+    {
+        await MarkJobFailedAsync(job, token);
+    }
+}
+```
 
 
