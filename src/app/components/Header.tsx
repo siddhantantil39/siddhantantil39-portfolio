@@ -16,7 +16,9 @@ const Header = () => {
     if (!mounted) return null;
 
     return(
-        <header className="sticky top-0 py-2 z-10">
+        /*TODO: fix the header when adding section header selecter*/
+        /*header className="sticky top-0 py-2 z-20 h-16 bg-background/100 ">*/
+        <header className="sticky top-0 py-2 z-20 h-16 bg-background/100 backdrop-blur-md border-b border-secondary-200">
             <div className="grid grid-cols-4 md:grid-cols-12 items-center gap-4">
                 <h1 className="text-2xl font-bold col-span-3 md:col-span-3">
                     <Link href="/" className="text-primary hover:text-blue-400 whitespace-nowrap text-left">
