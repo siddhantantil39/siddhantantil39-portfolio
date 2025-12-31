@@ -35,7 +35,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
         </div>
         <div className={utilStyles.mdContentH2} 
              dangerouslySetInnerHTML={{ __html: post.content }} />
-        <Link className="text-blue-500 hover:text-blue-700 py-2 text-lg font-bold" href="/blogs">← Go back</Link>    
+        <Link className="text-blue-500 hover:text-blue-700 py-4 text-lg font-bold" href="/blogs">← Go back</Link>    
       </article>
   );
 }
