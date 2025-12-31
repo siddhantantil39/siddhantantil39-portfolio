@@ -2,11 +2,9 @@
 title: 'Background Retry worker'
 date: '2025-12-30'
 ---
- 
-# MongoDB Retry Worker using BackgroundService (.NET)
----
 
-## Purpose
+# MongoDB Retry Worker using BackgroundService (.NET)
+
 
 This retry worker runs as a **.NET BackgroundService** and periodically retries MongoDB records that:
 
@@ -15,7 +13,6 @@ Have `Status = InProgress` but are **stuck**, identified by `LockTS` older than 
 
 MongoDB `findOneAndUpdate` is used to **atomically lock and retry** records.
 
----
 
 ## Implementation 
 

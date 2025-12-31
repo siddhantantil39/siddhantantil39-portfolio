@@ -13,6 +13,7 @@
   "dependencies": {
     "@geist-ui/icons": "^1.0.2",
     "@vercel/analytics": "^1.5.0",
+    "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
     "next": "^16.1.1",

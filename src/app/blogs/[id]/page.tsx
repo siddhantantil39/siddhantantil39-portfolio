@@ -1,10 +1,13 @@
 import { getSortedPostsData, getAllPostIds } from '@/app/lib/Posts';
+import Date from '@/app/components/Date';
+import utilStyles from '@/app/utils.module.css'
 
 export type Post = {
   id: string;
   title: string;
   date: string;
   content: string;
+  subHeadings: string[];
 };
 
 export async function generateStaticParams() {
@@ -25,9 +28,12 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
 
   return (
     <article>
-      <h1>{post?.title}</h1>
-      <p>{post?.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} /> {/* Basic render; enhance with Markdown later */}
-    </article>
+        <h1 className={utilStyles.headingLg}>{post.title}</h1>
+        <div className={utilStyles.headingMd}>
+          <Date dateString={post.date} />
+        </div>
+        <div className={utilStyles.mdContentH2} 
+             dangerouslySetInnerHTML={{ __html: post.content }} />
+      </article>
   );
 }

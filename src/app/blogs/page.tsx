@@ -1,7 +1,6 @@
 import {getSortedPostsData} from '@/app/lib/Posts';
-import { Layout } from '@geist-ui/icons';
-
 import Link from 'next/link';
+
 export default async function BlogPage(){
     const allPostsData = await getSortedPostsData();
 

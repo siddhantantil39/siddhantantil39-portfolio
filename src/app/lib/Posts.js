@@ -18,8 +18,13 @@ export  async function getSortedPostsData() {
       const id = fileName.replace(/\.md$/, '');
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
-
       const matterResult = matter(fileContents);
+
+      //sub-headings
+      const subHeadings = matterResult.content
+        .split('\n')
+        .filter(line => line.startsWith('## '))
+        .map(line => line.replace('## ', ''));
 
       const processedContent = await remark()
         .use(remarkRehype)     
@@ -31,11 +36,12 @@ export  async function getSortedPostsData() {
         id,
         date: matterResult.data.date,
         content: processedContent.toString(),
+        subHeadings: subHeadings || [],
         ...matterResult.data,
       };
     })
   );
-
+  
   return allPostsData.sort((a, b) => a.date < b.date ? 1 : -1);
 }
 
