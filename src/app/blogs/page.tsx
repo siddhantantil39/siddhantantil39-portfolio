@@ -1,5 +1,6 @@
 import {getSortedPostsData} from '@/app/lib/Posts';
 import Link from 'next/link';
+import Date from '@/app/components/Date';
 
 export default async function BlogPage(){
     const allPostsData = await getSortedPostsData();
@@ -14,7 +15,10 @@ export default async function BlogPage(){
                          <span className="text-lg font-bold text-blue-500 font-montserrat">
                             <Link href={`/blogs/${id}`}>{id}</Link>
                          </span>
-                         <span className='px-6'>{date}</span>
+                         
+                         <span className='p-6'>
+                            <Date dateString={date} />
+                         </span>
                         <br />
                     </li>
                 ))}
