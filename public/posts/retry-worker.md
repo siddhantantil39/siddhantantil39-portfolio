@@ -63,12 +63,12 @@ private async Task RetryOnceAsync(CancellationToken token)
 
     try
     {
-        await ProcessJobAsync(job, token);
-        await MarkJobCompletedAsync(job, token);
+        await ProcessJobAsync(claimedJob, token);
+        await MarkJobCompletedAsync(claimedJob, token);
     }
     catch (Exception)
     {
-        await MarkJobFailedAsync(job, token);
+        await MarkJobFailedAsync(claimedJob, token);
     }
 }
 ```
