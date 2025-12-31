@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`${geistSans.variable} ${geistMono.variable}`}>
+    <div className={`${geistSans.variable} ${geistMono.variable} px-4`}>
       <Header />
       <div className="md:mx-auto w-full px-4">
         <div className="flex flex-col md:flex-row">
