@@ -2,10 +2,8 @@
 title: 'Leetcode: Count Covered Buildings'
 date:  '2025-12-31'
 ---
-
+#Approch
 A building at `(x, y)` is considered covered if there exists another building on both sides vertically in the same column and horizontally in the same row.
-
-## Approach:
 
 For each `x`, track the minimum and maximum `y`, and for each `y`, track the minimum and maximum `x`. A building is covered if it lies strictly within both its column and row ranges.
 
