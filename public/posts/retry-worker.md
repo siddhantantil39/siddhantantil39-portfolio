@@ -58,10 +58,8 @@ And then the `RetryOnceAsync` runs something like this:
 private async Task RetryOnceAsync(CancellationToken token)
 {
     // 1. Try to acquire a failed or stuck job
-    var job = await ClaimJobRecordAsync(token);
-
-    if (job == null)
-        return;
+    var claimedJob = await ClaimJobRecordAsync(token);
+    if (claimedJob == null) return;
 
     try
     {
