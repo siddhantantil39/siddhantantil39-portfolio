@@ -8,7 +8,7 @@ date: '2026-01-18'
 y = mx + b is not needed because only slope comparison is required.
 Each point is fixed once and compared with all remaining points.
 Parallel lines are automatically separated since they have the same slope but different anchors.
-Line counts are accumulated while iterating over all point pairs.
+Line counts are found while iterating over all point pairs keeping one point as anchor.
 The solution works in O(n²) time by checking every pair.
 
 ```js
@@ -17,11 +17,7 @@ The solution works in O(n²) time by checking every pair.
  * @return {number}
  */
 var maxPoints = function(points) {
-    //y = mx + b is NOT NEEDED
-    //now since, we are finding for all points,
-    //if 2 lines are parallel, say 1 has 2points, and 2 has 3 points.
-    //we are getting all counts as we are moving for all points.
-    //as we are going O(n^2)
+    
     let n = points.length;
     let maxCount = 0;
 
