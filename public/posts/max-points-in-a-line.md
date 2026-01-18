@@ -3,7 +3,7 @@ title: 'Leetcode 149: Max points in a line'
 date: '2026-01-18'
 ---
 
-#Approach
+# Approach
 
 y = mx + b is not needed because only slope comparison is required.
 Each point is fixed once and compared with all remaining points.
