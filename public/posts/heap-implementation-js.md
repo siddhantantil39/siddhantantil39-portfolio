@@ -5,14 +5,15 @@ date:  '2026-01-14'
 
 # Approach 
 
-Min Heap implentation in JS.
+Min Heap implementation in JS with comparator.
 
 ```js
   let heap = new MinHeap();
 
   class MinHeap{
-    constructor(){
+    constructor(x){
         this.heap = [];
+        this.x = x;
     };
 
     push(val){
@@ -28,10 +29,10 @@ Min Heap implentation in JS.
         return min;
     };
 
-    bubbleUp(i){
+        bubbleUp(i){
         while(i>0){
             let parent = Math.floor((i-1)/2);
-            if(this.heap[parent] < this.heap[i]) break;
+            if(this.compare(parent,i)) break;
             [this.heap[parent], this.heap[i]] = [this.heap[i], this.heap[parent]];
             i = parent;
         }
@@ -39,16 +40,24 @@ Min Heap implentation in JS.
 
     bubbleDown(i){
         while(true){
-            let n = this.heap.length;
             let left = 2*i+1;
             let right = 2*i+2;
+            let n = this.heap.length;
             let parent = i;
-            if(left < n && this.heap[parent] > this.heap[left]) parent = left;
-            if(right < n && this.heap[parent] > this.heap[right]) parent = right;
-            if(parent==i) break;
+
+            if(left<n && !this.compare(parent,left)) parent = left;
+            if(right<n && !this.compare(parent,right)) parent = right;
+            if(i==parent) break;
             [this.heap[parent], this.heap[i]] = [this.heap[i], this.heap[parent]];
             i = parent;
         }
+    }
+
+    compare(i,j){
+        let v1 = Math.abs(this.heap[i] - this.x);
+        let v2 = Math.abs(this.heap[j] - this.x);
+
+        return v1 < v2;
     }
 
     isEmpty(){
