@@ -7,7 +7,6 @@ date:  '2026-02-02'
 Sliding window for Leetcode 1004
 
 ```js
-
 /**
  * @param {number[]} nums
  * @param {number} k
@@ -35,5 +34,4 @@ var longestOnes = function(nums, k) {
 
     return maxLen;
 };
-
 ```
