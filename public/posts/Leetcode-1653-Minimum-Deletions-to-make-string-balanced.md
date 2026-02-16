@@ -10,6 +10,8 @@ Precompute suffix counts of 'a' to know how many 'a's must be deleted on the rig
 
 Try every split point and minimize left b-deletions + right a-deletions.
 
+Same as question :  `https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/description/` with slight change.
+
 ```js
 /**
  * @param {string} s
