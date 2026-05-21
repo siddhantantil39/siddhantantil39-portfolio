@@ -1,10 +1,12 @@
 import HomeData from "@/app/data/home/HomeData";
+import PacmanAnimation from "@/app/components/PacmanAnimation";
 
 export default function Home() {
     return (
       <div className="mx-auto py-8 items-left ">
         <div className="mx-auto  ">
           <h1 className="text-4xl font-bold text-primary mb-4 font-montserrat">Overview</h1>
+          <PacmanAnimation />
           <div className="">
             {Object.entries(HomeData).map((section, index) => (
               <div key={index} className="py-2">

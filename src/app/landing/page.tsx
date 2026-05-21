@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import PacmanAnimation from "../components/PacmanAnimation";
 
 const Landing = () => {
 
     return(
-        <div className="h-full w-full flex items-center justify-center text-primary">
+        <div className="h-full w-full flex flex-col items-center justify-center text-primary">
                 <div className="w-full h-full grid grid-cols-1 md:grid-cols-12 md:items-start items-center text-center md:text-left py-16 md:py-20">
                     <div className="md:col-span-3 justify-center h-full hidden md:block"/>
                     <div className="col-span-1 col-start-4 md:col-span-6 h-full flex flex-col md:flex-row items-center md:items-center gap-8 md:gap-16">
@@ -28,6 +29,9 @@ const Landing = () => {
                     </div>
                     <div className="md:col-span-3 h-full justify-center hidden md:block"/>
                 </div>    
+                <div className="w-full max-w-4xl px-2 pb-8">
+                    <PacmanAnimation />
+                </div>
 
         </div>
     )

@@ -1,0 +1,182 @@
+.scene {
+  position: relative;
+  overflow: hidden;
+  min-height: 140px;
+  margin-bottom: 2rem;
+  border: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, #2563eb 18%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in srgb, #2563eb 16%, transparent) 1px, transparent 1px),
+    color-mix(in srgb, var(--background) 94%, #111827);
+  background-size: 32px 32px;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--background) 70%, transparent);
+}
+
+.track {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  right: 24px;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: repeating-linear-gradient(
+    90deg,
+    #facc15 0 8px,
+    transparent 8px 30px
+  );
+  opacity: 0.9;
+}
+
+.pacman {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  width: 36px;
+  height: 36px;
+  transform: translateY(-50%);
+  animation: chompRun 4.8s linear infinite;
+  filter: drop-shadow(0 8px 18px color-mix(in srgb, #000000 24%, transparent));
+}
+
+.pacman::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #facc15;
+  clip-path: polygon(0 0, 100% 0, 100% 34%, 50% 50%, 100% 66%, 100% 100%, 0 100%);
+  animation: mouthChomp 0.34s ease-in-out infinite alternate;
+}
+
+.eye {
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  left: 12px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #111827;
+  box-shadow: inset 2px -2px 0 color-mix(in srgb, #ffffff 45%, transparent);
+}
+
+.ghost {
+  position: absolute;
+  top: 50%;
+  left: 82%;
+  width: 42px;
+  height: 46px;
+  transform: translateY(-50%);
+  border-radius: 22px 22px 10px 10px;
+  background: #fb7185;
+  animation: ghostFloat 1.2s ease-in-out infinite alternate;
+}
+
+.ghost::before,
+.ghost::after {
+  content: "";
+  position: absolute;
+  top: 13px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: inset 3px 0 0 #1d4ed8;
+}
+
+.ghost::before {
+  left: 9px;
+}
+
+.ghost::after {
+  right: 9px;
+}
+
+.ghostFeet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 10px;
+  background: radial-gradient(circle at 7px 10px, var(--background) 0 7px, transparent 7px),
+    radial-gradient(circle at 21px 10px, var(--background) 0 7px, transparent 7px),
+    radial-gradient(circle at 35px 10px, var(--background) 0 7px, transparent 7px);
+}
+
+.caption {
+  position: absolute;
+  left: 1rem;
+  bottom: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+
+@keyframes chompRun {
+  from {
+    left: 24px;
+  }
+
+  to {
+    left: calc(100% - 88px);
+  }
+}
+
+@keyframes mouthChomp {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 18%, 50% 50%, 100% 82%, 100% 100%, 0 100%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 42%, 50% 50%, 100% 58%, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes ghostFloat {
+  from {
+    transform: translateY(calc(-50% - 5px));
+  }
+
+  to {
+    transform: translateY(calc(-50% + 5px));
+  }
+}
+
+@media (max-width: 640px) {
+  .scene {
+    min-height: 120px;
+  }
+
+  .pacman {
+    width: 32px;
+    height: 32px;
+  }
+
+  .ghost {
+    width: 34px;
+    height: 38px;
+  }
+
+  @keyframes chompRun {
+    from {
+      left: 18px;
+    }
+
+    to {
+      left: calc(100% - 64px);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pacman,
+  .pacman::before,
+  .ghost {
+    animation: none;
+  }
+
+  .pacman {
+    left: 42px;
+  }
+}
