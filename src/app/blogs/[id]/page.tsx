@@ -1,7 +1,7 @@
 import { getSortedPostsData, getAllPostIds } from '@/app/lib/Posts';
 import Date from '@/app/components/Date';
-import utilStyles from '@/app/utils.module.css'
 import Link from 'next/link';
+import BlogPostContent from '@/app/components/BlogPostContent';
 
 export type Post = {
   id: string;
@@ -28,14 +28,15 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
   }
 
   return (
-    <article className='px-4'>
-        <h1 className={utilStyles.headingLg}>{post.title}</h1>
-        <div className={utilStyles.headingMd}>
+    <article className='mx-auto max-w-3xl px-4 py-8'>
+        <header className="mb-8 border-b border-primary/10 pb-6">
+        <h1 className="text-4xl font-bold leading-tight text-primary font-montserrat">{post.title}</h1>
+        <div className="mt-3 text-sm text-secondary-300 font-montserrat">
           <Date dateString={post.date} />
         </div>
-        <div className={utilStyles.mdContentH2} 
-             dangerouslySetInnerHTML={{ __html: post.content }} />
-        <Link className="text-blue-500 hover:text-blue-700 py-4 text-lg font-bold" href="/blogs">← Go back</Link>    
+        </header>
+        <BlogPostContent html={post.content} />
+        <Link className="mt-8 inline-flex text-blue-500 hover:text-blue-700 text-base font-bold" href="/blogs">← Go back</Link>    
       </article>
   );
 }
